@@ -51,8 +51,6 @@ function modalView(key, json) {
     document.querySelector(".modal__body_img img").src =
         comic.thumbnail.path + "." + comic.thumbnail.extension;
 
-    console.log(`modalView  comic`, comic);
-
     modaTitle.textContent = comic.title;
 
     if (!comic) {
