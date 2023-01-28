@@ -1,7 +1,7 @@
 <h1 align="center"> Marvel Comics </h1>
 
 <p align="center">
-  Uma aplicação web da Marvel onde é possivel consultar os quadrinhos(comics). 
+  Uma aplicação web onde é possivel consultar os quadrinhos(comics) da Marvel. 
 </p>
 
 <p align="center">
@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Uma aplicação web Marvel, onde é possivel ver os quadrinhos da editora. Os dados dessa página foram extraídos do Developer Marvel, com a API Fetch.
 
--   Confira o site [online aqui]()
+-   Confira o site [online aqui](https://marvel-comics-one-taupe.vercel.app/)
 
 ## :telephone_receiver: Contato
 
