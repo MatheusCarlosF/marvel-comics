@@ -8,28 +8,26 @@
 }
 body{
     background-color: rgba(0, 0, 0, 0.911);
-
+    color: white;
 }
 main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     gap: 50px;
-
-    color: white;
-
 }
 header{
     text-align: center;
+
     padding: 50px;
-    color: white;
     font-size: 25px;
 }
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+
     height: 50px;
 }
 .comics-card{
@@ -48,11 +46,11 @@ footer{
     padding: 10px;
     border-radius: 5px;
 
-    background-color: rgba(255, 255, 255, 0.055);
-    
     transition: .3s;
-
+    
     cursor: pointer;
+
+    background-color: rgba(255, 255, 255, 0.055);
 }
 .comics-card-f:hover{
     scale: 1.01;
@@ -70,6 +68,7 @@ footer{
 
 .comics-card h2{
     text-align: justify;
+
     font-size: 13px;
     line-height: 18px;
 
@@ -77,33 +76,38 @@ footer{
 }
 
 .modal {
+    display: none;
     position: fixed;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.74) ;
     
-    display: none;
     transition: all ease 0.5s;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
     z-index: 99;
+
+    background-color: rgba(0, 0, 0, 0.74);
 }
 
   
 .modal__body {
+    display: flex;
     position: absolute;
+
     width: 70vw;
     height:70vh;
-    display: flex;
+
     background-color: rgb(49, 48, 48);
+    color: white;
 }
 
 .modal__body_img{
-    width: 50%;
     position: relative;
+    width: 50%;
 }
 
 .modal__body_img img{
@@ -114,31 +118,72 @@ footer{
 .modal__body_info{
     width: 50%;
     overflow-y: hidden;
+
 }
 .modal__body_info h2{
     padding: 20px;
     font-size: 3vh;
-    color: white;
 }
 .modal__body_info h3{
     text-align: justify;
+
     padding: 20px;
     font-size: 2vh;
-    color: white;
+
 }
 
 .btn-closemodal {
     position: absolute;
+
     bottom: 20px;
     right: 20px;
-    background-color: red;
-    color: white;
-    border: none;
     padding: 10px;
     border-radius: 5px;
+
+    border: none;
     cursor: pointer;
     font-size: large;
+
+    background-color: red;
+    color: white;
 }
 .btn-closemodal:hover{
     background-color: rgba(255, 0, 0, 0.582);
 }
+
+
+@media (min-width: 200px) and (max-width: 430px) {
+    .modal__body {
+        display: flex;
+        flex-direction: column;
+
+        width: 95vw;
+        height: 95vh;
+    }
+    .modal__body_img{
+        width: 100%;
+        height: 50%;
+    }
+    .modal__body_img img{
+        width: 100%;
+        height: 100%;
+    }
+    .modal__body_info{
+        width: 100%;
+        overflow-y: hidden;
+    }
+    .btn-closemodal {
+        padding: 5px;
+        bottom: 10px;
+        right: 10px;
+    }
+    .modal__body_info h2{
+        padding: 10px;
+        font-size: 2.5vh;
+    }
+    .modal__body_info h3{
+        padding: 10px;
+        font-size: 2vh;
+    }
+}
+  

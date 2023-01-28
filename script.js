@@ -1,10 +1,9 @@
 const timeStamp = "1674488640";
 const apiKey = "fc6e72b73644025cb41fa3812dcc1bdc";
-const md5 = "0dccccee80215ee11a05b21255de1229";
-let arr = [];
+const hash = "0dccccee80215ee11a05b21255de1229";
 
 fetch(
-    `http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}`
+    `http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${apiKey}&hash=${hash}`
 )
     .then((response) => {
         return response.json();
@@ -14,28 +13,23 @@ fetch(
         json.data.results.map((item, index) => {
             let srcImage = item.thumbnail.path + "." + item.thumbnail.extension;
             let title = item.title;
-            let description = item.description;
-            // console.log(item);
 
-            divComics(srcImage, title, description, comics, index, json);
+            divComics(srcImage, title, comics, index, json);
         });
     });
 
-function divComics(srcImage, title, description, toAppend, index, json) {
+function divComics(srcImage, title, toAppend, index, json) {
     let divF = document.createElement("div");
     let divS = document.createElement("div");
     let divImg = document.createElement("img");
     let divTitle = document.createElement("h1");
-    let divDescription = document.createElement("h2");
 
     divTitle.textContent = title;
-    // divDescription.textContent = description;
     divImg.src = srcImage;
     divF.setAttribute("data-key", index);
 
     divS.appendChild(divImg);
     divS.appendChild(divTitle);
-    divS.appendChild(divDescription);
     divF.appendChild(divS);
 
     toAppend.appendChild(divF);
@@ -67,10 +61,7 @@ function modalView(key, json) {
     }
 }
 
-// function closeModal() {
-//     document.querySelector(".modal").style.display = "none";
-// }
-
+/* close modal */
 document.querySelector(".btn-closemodal").addEventListener("click", () => {
     document.querySelector(".modal").style.display = "none";
 });
